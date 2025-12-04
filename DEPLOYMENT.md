@@ -1,14 +1,14 @@
-# 🚀 Vercel 배포 가이드
+# 🚀 Vercel Deployment Guide
 
-PromQL Froggy를 Vercel에 배포하는 방법입니다.
+How to deploy PromQL Froggy to Vercel.
 
-## 방법 1: GitHub 연동 배포 (가장 추천!)
+## Method 1: GitHub Integration (Recommended!)
 
-가장 쉽고 자동화된 방법입니다.
+The easiest and most automated approach.
 
-### 단계
+### Steps
 
-1. **GitHub에 코드 푸시**
+1. **Push Code to GitHub**
 ```bash
 git init
 git add .
@@ -17,129 +17,129 @@ git remote add origin https://github.com/YOUR_USERNAME/promql-froggy.git
 git push -u origin main
 ```
 
-2. **Vercel에서 프로젝트 Import**
-   - [vercel.com](https://vercel.com) 접속 및 GitHub 계정으로 로그인
-   - "Add New..." → "Project" 클릭
-   - GitHub 저장소에서 `promql-froggy` 선택
-   - "Import" 클릭
+2. **Import Project on Vercel**
+   - Visit [vercel.com](https://vercel.com) and log in with GitHub
+   - Click "Add New..." → "Project"
+   - Select `promql-froggy` from your GitHub repositories
+   - Click "Import"
 
-3. **설정 확인**
-   - Framework Preset: Vite (자동 감지됨)
-   - Build Command: `npm run build` (자동 설정됨)
-   - Output Directory: `dist` (자동 설정됨)
-   - "Deploy" 클릭
+3. **Confirm Settings**
+   - Framework Preset: Vite (auto-detected)
+   - Build Command: `npm run build` (auto-configured)
+   - Output Directory: `dist` (auto-configured)
+   - Click "Deploy"
 
-4. **완료!**
-   - 배포가 자동으로 진행됩니다
-   - URL: `https://promql-froggy.vercel.app` (또는 자동 생성된 URL)
-   - 이후 `git push`만 하면 자동으로 재배포됩니다!
+4. **Done!**
+   - Deployment starts automatically
+   - URL: `https://promql-froggy.vercel.app` (or auto-generated URL)
+   - Future deployments happen automatically with `git push`!
 
 ---
 
-## 방법 2: CLI로 배포
+## Method 2: CLI Deployment
 
-로컬에서 직접 배포하는 방법입니다.
+Deploy directly from your local machine.
 
-### 단계
+### Steps
 
-1. **Vercel CLI 설치**
+1. **Install Vercel CLI**
 ```bash
 npm install -g vercel
 ```
 
-2. **로그인**
+2. **Login**
 ```bash
 vercel login
 ```
 
-3. **배포**
+3. **Deploy**
 ```bash
-# 프로젝트 루트에서
+# From project root
 vercel
 
-# 프로덕션 배포
+# Production deployment
 vercel --prod
 ```
 
-4. **완료!**
-   - 자동으로 빌드되고 배포됩니다
-   - 배포된 URL이 터미널에 표시됩니다
+4. **Done!**
+   - Builds and deploys automatically
+   - Deployment URL is displayed in terminal
 
 ---
 
-## ⚙️ 프로젝트 설정
+## ⚙️ Project Settings
 
-Vercel은 자동으로 다음을 감지합니다:
+Vercel auto-detects:
 
 - **Framework:** Vite
 - **Build Command:** `npm run build`
 - **Output Directory:** `dist`
 - **Install Command:** `npm install`
 
-추가 설정이 필요 없습니다!
+No additional configuration needed!
 
 ---
 
-## 🌐 커스텀 도메인 연결
+## 🌐 Custom Domain Setup
 
-1. Vercel 프로젝트 대시보드 접속
-2. "Settings" → "Domains" 이동
-3. 도메인 입력 (예: `promqlfroggy.com`)
-4. DNS 레코드 추가:
+1. Access Vercel project dashboard
+2. Go to "Settings" → "Domains"
+3. Enter your domain (e.g., `promqlfroggy.com`)
+4. Add DNS record:
    - Type: `CNAME`
-   - Name: `@` 또는 `www`
+   - Name: `@` or `www`
    - Value: `cname.vercel-dns.com`
 
-완료! 자동으로 SSL 인증서가 발급됩니다.
+Done! SSL certificate is issued automatically.
 
 ---
 
-## 🔧 환경 변수 설정 (필요시)
+## 🔧 Environment Variables (if needed)
 
-현재 프로젝트는 환경 변수가 필요 없지만, 나중에 필요하다면:
+Current project doesn't require environment variables, but if needed later:
 
-1. Vercel 대시보드 → "Settings" → "Environment Variables"
-2. 변수 추가
-3. 재배포
-
----
-
-## 📊 배포 후 기능
-
-### 자동 기능
-- ✅ HTTPS 자동 적용
-- ✅ 글로벌 CDN 배포
-- ✅ Git push 시 자동 배포
-- ✅ 프리뷰 배포 (PR마다 별도 URL)
-- ✅ 롤백 기능
-
-### 성능 최적화
-- ✅ 자동 이미지 최적화
-- ✅ Edge 캐싱
-- ✅ Gzip/Brotli 압축
+1. Vercel Dashboard → "Settings" → "Environment Variables"
+2. Add variables
+3. Redeploy
 
 ---
 
-## 🚨 문제 해결
+## 📊 Post-Deployment Features
 
-### 빌드 실패 시
+### Automatic Features
+- ✅ HTTPS auto-enabled
+- ✅ Global CDN deployment
+- ✅ Auto-deploy on git push
+- ✅ Preview deployments (separate URL per PR)
+- ✅ Rollback capability
 
-**로컬에서 빌드 테스트:**
+### Performance Optimizations
+- ✅ Automatic image optimization
+- ✅ Edge caching
+- ✅ Gzip/Brotli compression
+
+---
+
+## 🚨 Troubleshooting
+
+### Build Failures
+
+**Test build locally:**
 ```bash
 npm run build
 ```
 
-**node_modules 재설치:**
+**Reinstall node_modules:**
 ```bash
 rm -rf node_modules package-lock.json
 npm install
 npm run build
 ```
 
-### 404 에러 (라우팅 문제)
+### 404 Errors (Routing Issues)
 
-Vercel은 SPA를 자동으로 감지하므로 추가 설정이 필요 없습니다.
-만약 문제가 있다면 `vercel.json` 생성:
+Vercel auto-detects SPAs, so no additional config needed.
+If issues persist, create `vercel.json`:
 
 ```json
 {
@@ -149,48 +149,48 @@ Vercel은 SPA를 자동으로 감지하므로 추가 설정이 필요 없습니�
 }
 ```
 
-### 환경별 배포
+### Environment-Based Deployments
 
 ```bash
-# 프리뷰 배포 (테스트용)
+# Preview deployment (for testing)
 vercel
 
-# 프로덕션 배포
+# Production deployment
 vercel --prod
 ```
 
 ---
 
-## 📈 배포 후 분석
+## 📈 Post-Deployment Analytics
 
-Vercel 대시보드에서 확인 가능:
-- 방문자 통계
-- 성능 메트릭
-- 빌드 로그
-- 에러 추적
+Available in Vercel dashboard:
+- Visitor statistics
+- Performance metrics
+- Build logs
+- Error tracking
 
 ---
 
-## 🎯 빠른 시작 요약
+## 🎯 Quick Start Summary
 
 ```bash
-# GitHub 연동 시
+# With GitHub integration
 1. git push
-2. vercel.com에서 Import
-3. 끝!
+2. Import on vercel.com
+3. Done!
 
-# CLI 사용 시
+# With CLI
 1. vercel login
 2. vercel --prod
-3. 끝!
+3. Done!
 ```
 
-**예상 배포 시간:** 1-2분
+**Expected deployment time:** 1-2 minutes
 
-**예상 URL:** `https://promql-froggy-[random].vercel.app`
+**Example URL:** `https://promql-froggy-[random].vercel.app`
 
 ---
 
 **Happy Deploying! 🐸🚀**
 
-문제가 있으면 [Vercel 문서](https://vercel.com/docs)를 참고하세요.
+For issues, check [Vercel Documentation](https://vercel.com/docs).
