@@ -1,0 +1,86 @@
+.result-display {
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-top: 1rem;
+}
+
+.result-empty {
+  background: #f8f9fa;
+  color: #6c757d;
+  text-align: center;
+  font-style: italic;
+}
+
+.result-error {
+  background: #f8d7da;
+  border: 1px solid #f5c6cb;
+  color: #721c24;
+}
+
+.result-error h3 {
+  margin-top: 0;
+  color: #721c24;
+}
+
+.result-success {
+  background: #d4edda;
+  border: 1px solid #c3e6cb;
+}
+
+.result-success h3 {
+  margin-top: 0;
+  color: #155724;
+}
+
+.result-table-container {
+  overflow-x: auto;
+  margin-top: 1rem;
+}
+
+.result-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.result-table th {
+  background: #155724;
+  color: white;
+  padding: 0.75rem;
+  text-align: left;
+  font-weight: 600;
+}
+
+.result-table td {
+  padding: 0.75rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.result-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.result-table tbody tr:hover {
+  background: #f8f9fa;
+}
+
+.metric-name {
+  font-family: 'Courier New', monospace;
+  font-weight: 600;
+  color: #667eea;
+}
+
+.metric-labels {
+  font-family: 'Courier New', monospace;
+  font-size: 0.875rem;
+  color: #6c757d;
+}
+
+.metric-value {
+  font-family: 'Courier New', monospace;
+  font-weight: 600;
+  text-align: right;
+  color: #155724;
+}

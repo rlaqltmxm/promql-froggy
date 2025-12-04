@@ -1,0 +1,72 @@
+.level-select {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.level-select-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.level-select-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.level-select-header p {
+  font-size: 1.25rem;
+  color: #6c757d;
+}
+
+.level-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.level-card {
+  cursor: pointer;
+  position: relative;
+}
+
+.level-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.level-number {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #667eea;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.level-badge {
+  font-size: 1.5rem;
+  color: #38ef7d;
+}
+
+.level-title {
+  font-size: 1.25rem;
+  margin: 0.5rem 0;
+  color: #333;
+}
+
+.level-concept {
+  font-size: 0.875rem;
+  color: #667eea;
+  font-weight: 600;
+  margin: 0.25rem 0;
+}
+
+.level-description {
+  font-size: 0.95rem;
+  color: #6c757d;
+  line-height: 1.5;
+  margin-top: 0.5rem;
+}

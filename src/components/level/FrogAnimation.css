@@ -1,0 +1,99 @@
+.frog-container {
+  position: relative;
+  height: 200px;
+  background: linear-gradient(to bottom, #87ceeb 0%, #b0e0e6 100%);
+  border-radius: 12px;
+  overflow: hidden;
+  margin: 1rem 0;
+}
+
+.pond-area {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.lily-pad {
+  position: absolute;
+  bottom: 20%;
+  transition: all 0.3s ease;
+}
+
+.lily-pad-1 {
+  left: 15%;
+}
+
+.lily-pad-2 {
+  left: 45%;
+}
+
+.lily-pad-3 {
+  left: 75%;
+}
+
+.lily-emoji {
+  font-size: 3rem;
+  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.frog {
+  position: absolute;
+  bottom: 20%;
+  left: 10%;
+  transition: all 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.frog-emoji {
+  font-size: 3rem;
+  display: inline-block;
+  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+.frog-jump {
+  left: 70%;
+  animation: jump 1s ease-in-out;
+}
+
+@keyframes jump {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-60px) rotate(-10deg);
+  }
+  50% {
+    transform: translateY(-80px) rotate(0deg);
+  }
+  75% {
+    transform: translateY(-40px) rotate(10deg);
+  }
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+}
+
+.success-message {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255, 255, 255, 0.95);
+  padding: 1rem 2rem;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.5s ease-in;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #155724;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
